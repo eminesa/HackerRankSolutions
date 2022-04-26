@@ -2,7 +2,8 @@ package com.example.hackerranksolutions.solutionclass
 
 fun main() {
 
- println(breakingRecords(arrayOf(3 ,4, 21, 36, 10, 28, 35, 5, 24, 42)))
+    println(breakingRecords(arrayOf(3, 4, 21, 36, 10, 28, 35, 5, 24, 42)))
+    println(breakingRecords1(arrayOf(3, 4, 21, 36, 10, 28, 35, 5, 24, 42)))
 
 }
 
@@ -15,12 +16,12 @@ fun breakingRecords(scores: Array<Int>): Array<Int> {
 
     for (score in scores) {
 
-        if (score<minScore){
+        if (score < minScore) {
             minScore = score
             minScoreCounter += 1
         }
 
-        if (score>maxScore){
+        if (score > maxScore) {
             maxScore = score
             maxScoreCounter += 1
         }
@@ -39,12 +40,12 @@ fun breakingRecords1(scores: Array<Int>): Array<Int> {
 
 
     scores.map { score ->
-        if (score<minScore){
+        if (score < minScore) {
             minScore = score
             minScoreCounter += 1
         }
 
-        if (score>maxScore){
+        if (score > maxScore) {
             maxScore = score
             maxScoreCounter += 1
         }

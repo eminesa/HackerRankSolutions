@@ -51,3 +51,19 @@ fun countApplesAndOranges1(
     println(applesOnHouse)
     println(orangeOnHouse)
 }
+
+fun countApplesAndOranges2(
+    startPointHome: Int,
+    endPointHome: Int,
+    appleLoc: Int,
+    orangeLoc: Int,
+    apples: Array<Int>,
+    oranges: Array<Int>
+): Unit {
+
+    val applesOnHouse = apples.filter { it + appleLoc in startPointHome..endPointHome }.size
+    val orangeOnHouse = oranges.filter { it + orangeLoc in startPointHome..endPointHome }.size
+
+    println(applesOnHouse)
+    println(orangeOnHouse)
+}

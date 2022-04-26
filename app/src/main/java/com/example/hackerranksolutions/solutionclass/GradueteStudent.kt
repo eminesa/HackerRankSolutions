@@ -25,6 +25,7 @@ fun gradingStudents(grades: Array<Int>): Array<Int> {
             }
         }
     }
+
     return updatedList.toTypedArray()
 
 }
