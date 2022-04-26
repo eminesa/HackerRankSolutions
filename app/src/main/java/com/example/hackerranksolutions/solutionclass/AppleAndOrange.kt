@@ -2,7 +2,9 @@ package com.example.hackerranksolutions.solutionclass
 
 fun main() {
 
-    countApplesAndOranges(7, 11, 5, 15, arrayOf(-2, 2, 1), arrayOf(5, -6))
+    //countApplesAndOranges(7, 11, 5, 15, arrayOf(-2, 2, 1), arrayOf(5, -6))
+    countApplesAndOranges1(7, 11, 5, 15, arrayOf(-2, 2, 1), arrayOf(5, -6))
+
 }
 
 fun countApplesAndOranges(
@@ -30,6 +32,22 @@ fun countApplesAndOranges(
             orangeOnHouse++
         }
     }
+    println(applesOnHouse)
+    println(orangeOnHouse)
+}
+
+fun countApplesAndOranges1(
+    startPointHome: Int,
+    endPointHome: Int,
+    appleLoc: Int,
+    orangeLoc: Int,
+    apples: Array<Int>,
+    oranges: Array<Int>
+): Unit {
+
+    val applesOnHouse = apples.filter { it + appleLoc in startPointHome..endPointHome }.size
+    val orangeOnHouse = oranges.filter { it + orangeLoc in startPointHome..endPointHome }.size
+
     println(applesOnHouse)
     println(orangeOnHouse)
 }
