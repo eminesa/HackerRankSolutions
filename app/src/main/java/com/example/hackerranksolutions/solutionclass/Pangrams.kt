@@ -25,11 +25,12 @@ fun pangrams(s: String): String {
 fun pangrams1(s: String): String {
 
     var pangrams = "pangram"
-    val alphabetWithUpperAndSpace = "abcdefghijklmnopqrstuvwxyz" + " "
-
-    val sentenceOfChar = s.toLowerCase().toCharArray()
-
-    repeat(alphabetWithUpperAndSpace.filter { !sentenceOfChar.contains(it) }.length) {
+    val alphabetWithSpace = "abcdefghijklmnopqrstuvwxyz" + " "
+   /** hackerrank lower case yapmamız için kullandığımız bu fonksiyonu kabul etmiyor
+    * lowercase() yerine toLowerCase() kullanmamızı istiyor.
+    * Kotlinde bu fonksiyon deprecated oldu. */
+    val sentenceOfChar = s.lowercase().toCharArray()
+    repeat(alphabetWithSpace.filter { !sentenceOfChar.contains(it) }.length) {
         pangrams = "not pangram"
     }
 
