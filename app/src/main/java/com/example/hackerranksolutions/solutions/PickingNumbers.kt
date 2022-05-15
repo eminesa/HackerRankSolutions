@@ -1,4 +1,4 @@
-package com.example.hackerranksolutions.solutionclass
+package com.example.hackerranksolutions.solutions
 
 fun main() {
     println(pickingNumbers(arrayOf(4, 6, 5, 3, 3, 1)))

@@ -1,4 +1,4 @@
-package com.example.hackerranksolutions.solutionclass
+package com.example.hackerranksolutions.solutions
 
 fun main() {
     println(getTotalX(arrayOf(2, 6), arrayOf(24, 36)))

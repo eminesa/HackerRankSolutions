@@ -1,4 +1,4 @@
-package com.example.hackerranksolutions.solutionclass
+package com.example.hackerranksolutions.solutions
 
 fun main() {
     println(divisibleSumPairs(3, arrayOf(1, 3, 2, 6, 1, 2)))

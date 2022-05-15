@@ -1,4 +1,4 @@
-package com.example.hackerranksolutions.solutionclass
+package com.example.hackerranksolutions.solutions
 
 fun main() {
     println(birthday(arrayOf(2,2,1,3,2),4,2))

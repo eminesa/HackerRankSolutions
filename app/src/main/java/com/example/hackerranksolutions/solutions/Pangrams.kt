@@ -1,4 +1,4 @@
-package com.example.hackerranksolutions.solutionclass
+package com.example.hackerranksolutions.solutions
 
 fun main() {
     println(pangrams("We promptly judged antique ivory buckles for the next prize"))

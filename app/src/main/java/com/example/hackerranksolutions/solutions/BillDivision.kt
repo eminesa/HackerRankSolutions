@@ -1,4 +1,4 @@
-package com.example.hackerranksolutions.solutionclass
+package com.example.hackerranksolutions.solutions
 
 fun main() {
     bonAppetit(arrayOf(3, 10, 2, 9), 1, 12)
