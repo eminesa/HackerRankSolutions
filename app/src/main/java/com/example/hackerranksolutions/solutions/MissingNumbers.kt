@@ -27,8 +27,7 @@ fun missingNumbers(arr: Array<Int>, brr: Array<Int>): Array<Int> {
     return foundOneTimeList.sorted().distinct().toTypedArray()
 }
 
-
-/*  repeat kullandığımızda içinde filter kullanmamıza izin vermiyor.
+/*  repeat kullandığımızda içinde filter içinde lsteye ekleme yada çıkarma yapmamıza izin vermiyor.
 repeat(arr.size) { indexOfFirst ->
       anArray = foundOneTimeList.filter { indexOfSecond -> arr[indexOfFirst] != indexOfSecond }
   } */
