@@ -9,7 +9,7 @@ fun main(){
 // joinToString() ile listeyi bir stringe çeviriyor. içine aldığı seperator ile elemanlarının aralarına : koyar
 // "%02d".format(it) ile eger gelen time icinde tek bir rakam varsa basına sıfır koymayı saglar.
 
-fun formatTime(data: List<Int>) = data.joinToString(":"){"%92d".format(it)}
+fun formatTime(data: List<Int>) = data.joinToString(":"){"%02d".format(it)}
 
 fun timeConversion(values: String): String {
 
