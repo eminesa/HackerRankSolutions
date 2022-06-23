@@ -7,14 +7,14 @@ fun main() {
 
 fun pangrams(s: String): String {
 
-    var pangrams = "pangram"
+    var pangrams = "not pangram"
     val alphabetWithUpperAndSpace = "abcdefghijklmnopqrstuvwxyz" + " "
 
     val sentenceOfChar = s.toLowerCase().toCharArray()
 
     for (letter in alphabetWithUpperAndSpace) {
-        if (!sentenceOfChar.contains(letter)) {
-            pangrams = "not pangram"
+        if (sentenceOfChar.contains(letter)) {
+            pangrams = "pangram"
             break
         }
     }
