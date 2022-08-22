@@ -10,7 +10,7 @@ class Logger() {
     fun shouldPrintMessage(timestamp: Int, message: String): Boolean {
 
         if (messageList.containsKey(message)) {
-            if (timestamp >= 10.plus(messageList[message]?.absoluteValue ?: 0)) {
+            if (timestamp >= 10.plus(messageList[message] ?: 0)) {
                 messageList[message] = timestamp
                 isShowing = true
             }else{
