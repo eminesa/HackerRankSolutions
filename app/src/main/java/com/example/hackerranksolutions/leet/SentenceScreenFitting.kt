@@ -4,17 +4,9 @@ import kotlin.math.absoluteValue
 
 fun main() {
   println(wordsTyping(arrayOf("hello", "world"), 2, 8))
-    //println(addChar("Emine",'?', 3))
-}
-
-fun addChar1(str: String, ch: Char, position: Int): String? {
-    return str.substring(0, position) + ch + str.substring(position)
-}
-
-fun addChar(str: String?, ch: Char, position: Int): String? {
-    val sb = StringBuilder(str)
-    sb.insert(position, ch)
-    return sb.toString()
+    var str= "Deneme"
+    val result = str.substring(0, 2)
+    println(result)
 }
 
 /*

@@ -2,11 +2,11 @@ package com.example.hackerranksolutions.leet
 
 fun main() {
    println(numMatchingSubseq("dsahjpjauf", arrayOf("ahjpjau","ja","ahbwzgqnuk","tnmlanowax"))) // not acceptable for all test case
-   val solution = Solution()
+   val solution = SolutionA()
    solution.numMatchingSubseq("dsahjpjauf", arrayOf("ahjpjau","ja","ahbwzgqnuk","tnmlanowax"))  // passed the hackerrank all test case
 }
 
- class Solution {
+ class SolutionA {
     var ca: CharArray = charArrayOf()
     var cb: CharArray = charArrayOf()
 
