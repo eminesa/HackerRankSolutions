@@ -1,38 +1,74 @@
 package com.example.hackerranksolutions.leetcode
 
+import com.example.hackerranksolutions.leet.ListNode
+
 fun main() {
-    println()
+    val result = addTwoNumbers(arrayOf(9, 9, 9, 9, 9, 9, 9), arrayOf(9, 9, 9, 9))
+    println(result.joinToString("  "))
+
+    val listNode1 = ListNode(9)
+    listNode1.next = ListNode(9)
+    listNode1.next?.next = ListNode(9)
+    listNode1.next?.next?.next = ListNode(9)
+    listNode1.next?.next?.next?.next = ListNode(9)
+    listNode1.next?.next?.next?.next?.next = ListNode(9)
+    listNode1.next?.next?.next?.next?.next?.next = ListNode(9)
+
+
+    val listNode = ListNode(9)
+    listNode.next = ListNode(9)
+    listNode.next?.next = ListNode(9)
+    listNode.next?.next?.next = ListNode(9)
+
+    addTwoNumbers(listNode1, listNode)
+
 }
 
 fun addTwoNumbers(l1: Array<Int>?, l2: Array<Int>?): Array<Int> {
-    val newL1 = changeTheLastAndFirstElement(l1)
-    val newL2 = changeTheLastAndFirstElement(l2)
+    var reminder = 0
+    val l1Size = l1?.size ?: 0
+    val l2Size = l2?.size ?: 0
+    val reminderList: MutableList<Int> = ArrayList()
 
-    val totalArray: Int = newL2?.joinToString("")?.toInt()
-        ?.let { newL1?.joinToString("")?.toInt()?.plus(it) } ?:0
+    for (index in 0 until l1Size - 1) {
+        var l2Total = 0
+        if (index < l2Size) {
+            l2Total = l2?.get(index) ?: 0
+        }
+        val total = (l1?.get(index) ?: 0) + l2Total + reminder
+        val value = total % 10
+        reminderList.add(value)
 
-    val totalList = mutableListOf<Int>()
-    totalArray.toString().toList().forEach {
-       totalList.add(it.toString().toInt())
+        reminder = total / 10
+        if (index == l1Size - 2 && reminder != 0)  // son elemanı konrol ediyorum ona göre elimde kalanım varsa ekliyorum
+            reminderList.add(reminder)
     }
-   return totalList.toTypedArray()
+
+    return reminderList.toTypedArray()
 }
 
-fun changeTheLastAndFirstElement(l1: Array<Int>?): Array<Int>? {
+fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
+    var newl1 = l1
+    var newl2 = l2
+    var reminder = 0
+    val dummyHead = ListNode(0)
+    var curr: ListNode? = dummyHead
 
-    val newL1 = l1?.toMutableList()
-    val newL1FirstElement: Int? = l1?.first()
-    val lastIndex: Int? = l1?.size?.minus(1)
+    while (newl1 != null || newl2 != null || reminder != 0) {
 
-    if (lastIndex != null && newL1FirstElement != null) {
-        if (lastIndex > 0) {
-            val newL1LastElement = l1[lastIndex]
-            newL1?.removeAt(0)
-            newL1?.add(0, newL1LastElement)
-            newL1?.removeAt(lastIndex)
-            newL1?.add(lastIndex, newL1FirstElement)
-        }
+        val l1Total = newl1?.`val` ?: 0
+        val l2Total = newl2?.`val` ?: 0
+
+        val total = l1Total + l2Total + reminder
+        reminder = total / 10
+        val value = total % 10
+        curr!!.next = ListNode(value)
+        curr = curr.next
+
+        if (newl1 != null) newl1 = newl1.next
+        if (newl2 != null) newl2 = newl2.next
+
     }
-    return newL1?.toTypedArray()
 
+    return dummyHead.next // en başta tanımlarken eklediğimiz 0 sininsin diye yaptık
 }
