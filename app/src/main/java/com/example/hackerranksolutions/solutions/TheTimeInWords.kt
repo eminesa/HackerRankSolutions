@@ -2,7 +2,7 @@ package com.example.hackerranksolutions.solutions
 
 
 fun main() {
-    println(timeInWords(5, 47))
+    println(timeInWords(5, 35))
 }
 
 fun timeInWords(h: Int, m: Int): String {

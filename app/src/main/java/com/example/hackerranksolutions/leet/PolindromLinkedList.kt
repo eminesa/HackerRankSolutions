@@ -19,14 +19,13 @@ fun main() {
     listNode.next = ListNode(2)
     listNode.next?.next = ListNode(2)
     listNode.next?.next?.next = ListNode(1)
-    val solution = SolutionSS()
 
-    println(solution.isPalindrome(listNode))
+    isPalindrome(listNode)
 
 }
 
-fun isPalindrome1(head: ListNode?): Boolean {
-    val listOfNumber = mutableListOf<Int>()
+fun isPalindrome(head: ListNode?): Boolean {
+    val listOfNumber: MutableList<Int> = ArrayList()
 
     var currentNode = head
     while (currentNode != null) {
@@ -49,7 +48,7 @@ fun isPalindrome1(head: ListNode?): Boolean {
     return true
 }
 
-fun isPalindrome(head: ListNode?): Boolean {
+fun isPalindrome1(head: ListNode?): Boolean {
     val listOfNumber: MutableList<Int> = ArrayList()
 
     var currentNode = head
@@ -61,30 +60,12 @@ fun isPalindrome(head: ListNode?): Boolean {
     if (listOfNumber.size <= 1) {
         return true
     }
-    var isPalindromes  = true
+    var isPalindromes = true
     for (index in 0 until listOfNumber.size / 2) {
-       if (listOfNumber[index] != listOfNumber[listOfNumber.size - 1 - index]) {
-           isPalindromes = false
-       }
+        if (listOfNumber[index] != listOfNumber[listOfNumber.size - 1 - index]) {
+            isPalindromes = false
+        }
     }
 
     return isPalindromes
-}
-
-internal class SolutionSS {  // the best solution faster and less usage memory
-
-    private var frontPointer: ListNode? = null // tüm ListNode yeni bir değişkene atandı.
-    private fun recursivelyCheck(currentNode: ListNode?): Boolean {
-
-        if (currentNode != null) {
-            if (!recursivelyCheck(currentNode.next)) return false
-             frontPointer = frontPointer!!.next
-        }
-        return true
-    }
-
-    fun isPalindrome(head: ListNode?): Boolean {
-        frontPointer = head
-        return recursivelyCheck(head)
-    }
 }
