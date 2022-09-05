@@ -3,12 +3,12 @@ package com.example.hackerranksolutions.leet
 
 fun main() {
 
-    val obj = Solution(intArrayOf(2,4,5,7,8,9,9))
+    val obj = Solution1(intArrayOf(2,4,5,7,8,9,9))
     println(obj.pickIndex())
 
 }
 
-internal class Solution(w: IntArray) {
+internal class Solution1(w: IntArray) {
     private val prefixSums: IntArray = IntArray(w.size)
     private val totalSum: Int
     fun pickIndex(): Int {

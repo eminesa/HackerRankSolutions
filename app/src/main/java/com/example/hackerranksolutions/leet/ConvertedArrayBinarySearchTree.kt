@@ -1,9 +1,9 @@
 package com.example.hackerranksolutions.leet
 
 fun main() {
- val deneme = sortedArrayToBST(intArrayOf(-10,-3,0,5,9))
+    val deneme = sortedArrayToBST(intArrayOf(-10, -3, 0, 5, 9))
 
-  println(deneme)
+    println(deneme)
 }
 
 fun helper(nums: IntArray, left: Int, right: Int): TreeNode? {
