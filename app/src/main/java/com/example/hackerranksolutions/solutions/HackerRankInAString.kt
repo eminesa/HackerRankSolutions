@@ -1,5 +1,7 @@
 package com.example.hackerranksolutions.solutions
 
+import java.lang.StringBuilder
+
 fun main() {
     println(hackerrankInString("hereiamstackerrank"))
     println(hackerrankInString("hackerworld"))
