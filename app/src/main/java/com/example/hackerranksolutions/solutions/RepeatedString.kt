@@ -1,7 +1,7 @@
 package com.example.hackerranksolutions.solutions
 
 fun main() {
-    println(repeatedString("aba", 10))
+    println(repeatedString("ab", 10))
 }
 
 fun repeatedString(s: String, n: Long): Long {
