@@ -19,7 +19,6 @@ fun removeElements(head: ListNode?, `val`: Int): ListNode? {
     sentinel.next = head
     var previous = sentinel
 
-
     while (currentHead != null) {
         if (currentHead.`val` == `val`) {
             previous.next = currentHead.next
