@@ -28,7 +28,7 @@ fun maxDepth(root: TreeNode?): Int {
 
     var depth = 0
     var currentDepth: Int
-    while (!linkedList.isEmpty()) {
+    while (linkedList.isNotEmpty()) {
         updateRoot = linkedList.pollLast()
         currentDepth = depths.pollLast() as Int
         if (updateRoot != null) {

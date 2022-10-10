@@ -2,24 +2,29 @@ package com.example.hackerranksolutions.leet
 
 fun main() {
 
-   val root =Node(1)
-   root.left = Node(2)
-   root.left?.left = Node(4)
-   root.left?.right = Node(5)
-   root.right = Node(3)
-   root.right?.left = Node(6)
-   root.right?.right = Node(7)
+    val root = BinaryNode(1)
+    root.left = BinaryNode(2)
+    root.left?.left = BinaryNode(4)
+    root.left?.right = BinaryNode(5)
+    root.right = BinaryNode(3)
+    root.right?.left = BinaryNode(6)
+    root.right?.right = BinaryNode(7)
 
     connect(root)
 }
 
-class Node(var `val`: Int) {
-    var left: Node? = null
-    var right: Node? = null
-    var next: Node? = null
+class BinaryNode(var `val`: Int) { //for binary tree
+    var left: BinaryNode? = null
+    var right: BinaryNode? = null
+    var next: BinaryNode? = null
 }
 
-fun connect(root: Node?): Node? {
+// Definition for a Node.
+class Node(var `val`: Int) {
+    var neighbors: ArrayList<Node?> = ArrayList()
+}
+
+fun connect(root: BinaryNode?): BinaryNode? {
 
     if (root == null) {
         return root
