@@ -4,7 +4,7 @@ import java.util.*
 import kotlin.collections.HashMap
 
 fun main() {
-
+    println(longestStrChain(arrayOf("a", "ba", "bca", "bda", "bdca", "b")))
 }
 
 fun longestStrChain(words: Array<String>): Int {
@@ -20,8 +20,8 @@ fun longestStrChain(words: Array<String>): Int {
             val temp = StringBuilder(word)
             temp.deleteCharAt(i)
             val predecessor = temp.toString()
-           // val previousLength = dp.getOrDefault(predecessor, 0)
-           // presentLength = Math.max(presentLength, previousLength + 1)
+            val previousLength = dp.get(predecessor) ?: 0
+            presentLength = Math.max(presentLength, previousLength + 1)
         }
         dp[word] = presentLength
         longestWordSequenceLength = Math.max(longestWordSequenceLength, presentLength)
