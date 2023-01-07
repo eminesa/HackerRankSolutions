@@ -1,7 +1,5 @@
 package com.example.hackerranksolutions.leetcode
 
-import com.example.hackerranksolutions.leet.ListNode
-
 fun main() {
     val result = addTwoNumbers(arrayOf(9, 9, 9, 9, 9, 9, 9), arrayOf(9, 9, 9, 9))
     println(result.joinToString("  "))
